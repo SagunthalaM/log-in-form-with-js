@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register </title>
+     <link rel="icon" href="favicon.ico">
+     <link rel="stylesheet" href="style.css" >
+ 
+  
+</head>
+<body>
+   <section>
+    <h1 style="color:rebeccapurple;position:center;">Register Here</h1>
+   
+  <form action="#" name="form1">
+  <div> <label for="" class="name">Name</label>
+    
+   <input type="text" name="text1"  id="Name" maxlength="15" placeholder="Enter Your Name"
+ required>
+   
+  <span class="counter" style="color:red" id="demo">* 15 digits only</span>
+  <span class="counter2" style="color:red;margin-left:150px;margin-top: 5px;" ></span>
+ </div>
+ <br>
+ <label for=""  class="email" maxlength="7" >Email</label>
+ <input type="email" placeholder="xyz@gmail.com"   required><br><br>
+ <div>
+ <label for="" class="phone" >Phone</label>
+ <input type="tel"  pattern="[0-9]{10}"  placeholder="0123456789" id="pnum" class="number" required>
+ 
+ <span class="limit" style="color:red"  id="10">* 10 digits only</span><br><br>
+
+ </div>
+ <label for="" class="pass">Password</label>
+    <input type="password" class="password" value="" id="myInput" required><br>
+    <input type="checkbox" style="margin-left: 150px;" onclick="myFunction()"> Show password
+ <label for="" >
+      <br>Confirm <br> Password
+ </label>
+ <input type="password"  class="confirm-pass" required><br><br>
+ 
+ 
+    
+    <div>
+   
+    <input type="submit" class="button"  onclick="valid()" value="Next" required>  
+        <a href="login form.html" style="text-decoration: none;" class="submit"> Submit</a>
+        <br><br>
+      
+         <a href="login form.html" target="_blank" style="text-decoration: none;">
+            <span style="width:100%" class="already-user">ALREADY USER 👇</span>
+         </a> </div>
+      </form>
+   </section>
+<script>
+   const input = document.querySelector("form input"),
+    counter = document.querySelector("form .counter"),
+    counter2=document.querySelector("form .counter2"),
+    maxLength = input.getAttribute("maxlength");
+    const numbers=/^[0-9]+$/,
+    letters=/^[A-Za-z]+$/;
+   input.onkeyup=()=>{
+      if (input.value.match(letters)){
+       counter.innerText=maxLength-input.value.length;
+      counter2.style.display="none";
+      counter.style.display="inline";
+      counter.style.color="black";
+      return true;
+    }else if(x=input.value.match(numbers)){
+      counter2.innerText=maxLength-input.value.length;
+      counter.style.display="none";
+      counter2.innerHTML="*Please Enter your name";
+      counter2.style.display="block";
+      counter2.style.margin="0 100";
+      alert("please enter characters only");
+      return false;
+      
+
+    }
+   }
+
+      function myFunction(){
+      var x=document.getElementById("myInput");
+      if (x.type==="password"){
+         x.type="text";
+      }else{
+         x.type="password";
+      }
+   }
+
+</script>
+
+
+
+<script>
+     function valid()
+            {
+            var val=document.getElementById('pnum');
+                if(val.value.length===10){
+                  return true;
+                }
+               
+                else{{
+                        return false;
+                    }
+                
+               }
+            }
+</script>
+</body>
+</html>
